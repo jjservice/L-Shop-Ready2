@@ -83,6 +83,31 @@
     }
     }
 
+
+
+
+
+
+
+  #cart-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart-indicator span {
+  font-weight: bold;
+}
+
+
   </style>
 </head>
 <body>
@@ -116,6 +141,11 @@
 
   <!-- Navigation Section -->
     <details>
+        <!-- Cart Indicator -->
+     <div id="cart-indicator" class="cart-indicator">
+      <span id="cart-count">0</span> items
+         </div>
+
       <summary><i class="fa fa-shopping-cart"></i></summary>
       <div class="cart-container">
       <div id="cart-items"></div>
@@ -123,6 +153,8 @@
     <button id="checkout-btn" style="display:none;">Proceed to Checkout</button>
   </div>
   </details>
+  
+
 
      
   <ul class="song-details" id="song-details" style="display: none;">
