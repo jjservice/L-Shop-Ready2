@@ -54,16 +54,6 @@ function updateCart() {
   // Show or hide the checkout button based on cart contents
   const checkoutBtn = document.getElementById('checkout-btn');
   checkoutBtn.style.display = cart.length > 0 ? 'inline-block' : 'none';
-
-  // Update the cart indicator
-  updateCartCount();
-}
-
-// Function to update the cart item count (cart indicator)
-function updateCartCount() {
-  const cartCountElement = document.getElementById('cart-count');
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0); // Count total items
-  cartCountElement.textContent = totalItems > 0 ? totalItems : ''; // Show the count or hide if empty
 }
 
 // Function to update item quantity in the cart
@@ -74,6 +64,7 @@ function updateItemQuantity(productId, newQuantity) {
     updateCart(); // Re-render the cart after updating quantity
   }
 }
+
 
 // Function to show a message when an item is added
 function showAddToCartMessage(item) {
@@ -132,13 +123,6 @@ document.querySelectorAll('.buy-now').forEach(button => {
   });
 });
 
-// Initialize the cart display and indicator on page load
-updateCart();
-
-
-
-
-
 // Handle 'Remove' button click from cart
 document.getElementById('cart-items').addEventListener('click', (event) => {
   if (event.target.classList.contains('remove-item')) {
@@ -155,13 +139,8 @@ document.getElementById('cart-items').addEventListener('click', (event) => {
   }
 });
 
-// Function to clear cart after successful checkout
-function clearCart() {
-  cart = []; // Clear the local cart array
-  localStorage.removeItem('cart'); // Remove the cart from localStorage
-  updateCart(); // Update the cart display (should show empty cart)
-}
-
+// Initialize the cart display on page load
+updateCart();
 
 // Handle the 'Proceed to Checkout' button click
 document.getElementById('checkout-btn').addEventListener('click', async () => {
