@@ -1,8 +1,12 @@
 const express = require('express');
 const Stripe = require('stripe');
-const stripe = Stripe('sk_test_51QTSb2LPa32ZluPpcI0TbD6UNtfdYUpsDLbMxtEbNk5f4OVrDFlxa7pLF76zCxmRRfS8KkAlk6hwNuuVAzZdgngD00v3yaYdfu'); // Replace with your Stripe secret key
+require('dotenv').config(); // Load the environment variables from the .env file
+
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Access Stripe key from .env
 const bodyParser = require('body-parser');
 const app = express();
+
+
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
