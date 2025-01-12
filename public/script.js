@@ -162,16 +162,6 @@ function clearCart() {
   updateCart(); // Update the cart display (should show empty cart)
 }
 
-// Simulate successful checkout (this would usually be triggered by a Stripe webhook or success page handler)
-if (window.location.pathname === '/success') {
-  clearCart(); // Clear the cart when the success page is loaded
-  alert("Thank you for your purchase! Your cart has been cleared.");
-  // Optionally, redirect to another page, e.g., home page
-  window.location.href = './index.html'; // Redirect to home page after success
-}
-
-// Initialize the cart display on page load
-updateCart();
 
 // Handle the 'Proceed to Checkout' button click
 document.getElementById('checkout-btn').addEventListener('click', async () => {
