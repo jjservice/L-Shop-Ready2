@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: linear-gradient(to right,black,darkblue,maroon,black);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,7 +23,7 @@
 
         .container {
             text-align: center;
-            background-color: #ffffff;
+            background-color: beige;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,7 @@
 
         .button {
             display: inline-block;
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -64,7 +64,9 @@
         }
 
         .button:hover {
-            background-color: #0056b3;
+            transform: scale(1.10);
+            transition: 0.5s;
+            background-color: green;
         }
     </style>
 </head>
@@ -74,7 +76,7 @@
             <div class="icon">&#10004;</div> <!-- Green Checkmark -->
             <h1>Payment Successful!</h1>
             <p>Your payment has been successfully processed. Thank you for your purchase.</p>
-            <a href="index.html" class="button">Return to Home</a>
+            <a href="index.html" class="button">Home</a>
         </div>
     </div>
 </body>
