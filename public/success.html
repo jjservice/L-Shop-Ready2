@@ -19,19 +19,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 5px;
         }
 
         .container {
+            margin: 0% auto;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.623);
             padding: 40px;
             border-radius: 15px;
-            border: 2px solid #28a746a1;
+            max-width: 95%;
             box-shadow: 0px 2px 6px yellowgreen;
         }
 
         .success-message {
-            max-width: 400px;
+            max-width: 90%;
             margin: 0 auto;
         }
 
@@ -40,11 +42,16 @@
             color: #28a745; /* Green color for success */
             margin-bottom: 20px;
         }
+        h1{
+            color: white;
+            text-shadow: 2px 2px 4px gold;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
 
         p {
             font-size: 16px;
-            color: white;
-            text-shadow: 2px 2px 4px gold;
+            color: beige; 
             margin-bottom: 20px;
         }
 
@@ -63,6 +70,28 @@
             transform: scale(1.10);
             transition: 0.5s;
             background-color: green;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+            margin: 0% auto;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.623);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 95%;
+            box-shadow: 0px 2px 6px yellowgreen;
+        }
+        .container {
+            width: 500px;
+        }
+
+        .success-message {
+            width: 500px;
+            
+        }
+
+
         }
     </style>
 </head>
