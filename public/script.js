@@ -77,19 +77,37 @@ function showAddToCartMessage(item) {
   // Play a notification sound
   const notificationSound = new Audio('./Sent-Msg-Sound(mp3).mp3'); // Provide the correct path to your sound file
 
-  // Handle potential errors
+  // Handle potential errors for the sound file
   notificationSound.onerror = function() {
     console.error('Error loading the sound file.');
   };
 
-  // Ensure the sound plays after the user interaction (alert)
+  // Ensure the sound plays after the user interaction
   notificationSound.play().catch(function(error) {
     console.error('Audio play failed:', error);
   });
 
-  // Show the alert message
-  alert(`Added ${item.quantity} x ${item.name} to your cart!`);
+  // Get the notification and the message element
+  const notification = document.getElementById('custom-notification');
+  const message = document.getElementById('notification-message');
+
+  // Set the message content
+  message.textContent = `Added ${item.quantity} x ${item.name} to your cart!`;
+
+  // Show the notification by adding the 'show' class
+  notification.classList.add('show');
+
+  // Hide the notification after 3 seconds
+  setTimeout(function() {
+    notification.classList.remove('show');
+  }, 3000);
 }
+
+// Example of how this could be triggered (add an item to the cart)
+function addToCart(item) {
+  showAddToCartMessage(item);
+}
+
 
 
 // Handle the 'Add to Cart' button click

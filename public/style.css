@@ -1549,7 +1549,9 @@ footer{
       width: 300px;
       height: auto;
     }
-
+   
+    .notification {
+      width: 50%;
    
   }
 
