@@ -8,6 +8,7 @@ function updateCart() {
   const cartItemsContainer = document.getElementById('cart-items');
   cartItemsContainer.innerHTML = '';
   let total = 0;
+  let totalItems = 0; // Track the total number of items in the cart
 
   cart.forEach(item => {
     // Validate item properties to prevent displaying undefined values
@@ -46,6 +47,7 @@ function updateCart() {
     // Add to cart container
     cartItemsContainer.appendChild(cartItem);
     total += parseFloat(item.price) * item.quantity; // Update total based on quantity
+    totalItems += item.quantity; // Add to total number of items in the cart
   });
 
   // Update total price
@@ -54,7 +56,11 @@ function updateCart() {
   // Show or hide the checkout button based on cart contents
   const checkoutBtn = document.getElementById('checkout-btn');
   checkoutBtn.style.display = cart.length > 0 ? 'inline-block' : 'none';
+
+  // Update the cart item count indicator
+  document.getElementById('cart-item-count').textContent = totalItems;
 }
+
 
 // Function to update item quantity in the cart
 function updateItemQuantity(productId, newQuantity) {
@@ -141,6 +147,9 @@ document.getElementById('cart-items').addEventListener('click', (event) => {
 
 // Initialize the cart display on page load
 updateCart();
+
+
+
 
 // Handle the 'Proceed to Checkout' button click
 document.getElementById('checkout-btn').addEventListener('click', async () => {
