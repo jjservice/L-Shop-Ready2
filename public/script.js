@@ -168,6 +168,17 @@ document.getElementById('cart-items').addEventListener('click', (event) => {
     const productId = event.target.getAttribute('data-product-id');
     
     // Remove item from cart
+    const notificationSound = new Audio('./Sent-Msg-Sound(mp3).mp3'); // Provide the correct path to your sound file
+
+    // Handle potential errors for the sound file
+    notificationSound.onerror = function() {
+      console.error('Error loading the sound file.');
+    };
+  
+    // Ensure the sound plays after the user interaction
+    notificationSound.play().catch(function(error) {
+      console.error('Audio play failed:', error);
+    });
     cart = cart.filter(item => item.id !== productId);
 
     // Save the updated cart to localStorage
