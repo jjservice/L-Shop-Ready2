@@ -75,7 +75,7 @@ function updateItemQuantity(productId, newQuantity) {
 // Function to show a message when an item is added
 function showAddToCartMessage(item) {
   // Play a notification sound
-  const notificationSound = new Audio('./UpCart-Sound1.mp3'); // Provide the correct path to your sound file
+  const notificationSound = new Audio('./Flight-Sound.mp3'); // Provide the correct path to your sound file
 
   // Handle potential errors for the sound file
   notificationSound.onerror = function() {
@@ -198,20 +198,6 @@ updateCart();
 
 // Handle the 'Proceed to Checkout' button click
 document.getElementById('checkout-btn').addEventListener('click', async () => {
-
-
-   // send items to server
-   const notificationSound = new Audio('./Flight-Sound.mp3'); // Provide the correct path to your sound file
-
-   // Handle potential errors for the sound file
-   notificationSound.onerror = function() {
-     console.error('Error loading the sound file.');
-   };
- 
-   // Ensure the sound plays after the user interaction
-   notificationSound.play().catch(function(error) {
-     console.error('Audio play failed:', error);
-   });
   // Send request to the server to create the checkout session with the cart items
   const response = await fetch('/create-checkout-session', {
     method: 'POST',
