@@ -82,5 +82,14 @@
             <a href="index.html" class="button">Home</a>
         </div>
     </div>
+
+    <!-- Audio element for success sound -->
+    <audio id="success-sound" src="./Flight-Sound.mp3" preload="auto"></audio>
+    <script>
+        window.onload = function() {
+            var audio = document.getElementById('success-sound');
+            audio.play(); // Play sound when the page is loaded
+        }
+    </script>
 </body>
 </html>
