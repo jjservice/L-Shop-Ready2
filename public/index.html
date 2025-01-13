@@ -141,8 +141,9 @@
     top: 20px; /* Adjust position */
     left: 50%;
     transform: translateX(-50%); /* Center the box horizontally */
-    background-color: #4CAF50; /* Green background (success) */
+    background-color: rgba(0, 0, 0, 0.637);
     color: white; /* White text */
+    text-shadow: 2px 2px 4px gold;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -150,8 +151,11 @@
     display: none; /* Hidden by default */
     z-index: 9999; /* Make sure it's on top */
     font-size: 16px; /* Adjust font size */
-    max-width: 300px; /* Set a max width */
+    width: 80%;
     text-align: center;
+    border-bottom: 1px solid rgb(22, 184, 22);
+    box-shadow: 0px 2px 6px lightgreen;
+    border-radius: 15px;
   }
 
   /* For notification message styling */
@@ -193,6 +197,7 @@
   .notification.warning {
     background-color: #ff9800; /* Warning color */
   }
+
 
 
 

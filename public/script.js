@@ -100,7 +100,7 @@ function showAddToCartMessage(item) {
   // Hide the notification after 3 seconds
   setTimeout(function() {
     notification.classList.remove('show');
-  }, 3000);
+  }, 5000);
 }
 
 // Example of how this could be triggered (add an item to the cart)
