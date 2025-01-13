@@ -74,8 +74,23 @@ function updateItemQuantity(productId, newQuantity) {
 
 // Function to show a message when an item is added
 function showAddToCartMessage(item) {
+  // Play a notification sound
+  const notificationSound = new Audio('./Sent-Msg-Sound(mp3).mp3'); // Provide the correct path to your sound file
+
+  // Handle potential errors
+  notificationSound.onerror = function() {
+    console.error('Error loading the sound file.');
+  };
+
+  // Ensure the sound plays after the user interaction (alert)
+  notificationSound.play().catch(function(error) {
+    console.error('Audio play failed:', error);
+  });
+
+  // Show the alert message
   alert(`Added ${item.quantity} x ${item.name} to your cart!`);
 }
+
 
 // Handle the 'Add to Cart' button click
 document.querySelectorAll('.buy-now').forEach(button => {
