@@ -63,4 +63,7 @@ app.post('/create-checkout-session', async (req, res) => {
 // Serve static files (for success/cancel pages)
 app.use(express.static('public'));
 
-
+// Start the server
+app.listen(4242, () => {
+  console.log('Server running on http://localhost:4242');
+});

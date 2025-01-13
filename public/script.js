@@ -1,25 +1,3 @@
-const stripe = Stripe('pk_test_51QTSb2LPa32ZluPp57bSF7ObgsE3CMMCcM1eSbcuMBDrhRuZV6uYL8EqqpLLiGwIAbEg8crJEYfXBDyBM5fZM5Q600fBMTS2Rt');
-
-
-
-// Handle the 'Proceed to Checkout' button click
-document.getElementById('checkout-btn').addEventListener('click', async () => {
-  // Send request to the server to create the checkout session with the cart items
-  const response = await fetch('/create-checkout-session', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items: cart })
-  });
-
-  const session = await response.json();
-
-  // Redirect to Stripe Checkout
-  const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
-  if (error) {
-    console.error('Error:', error);
-  }
-});
-
 // Initialize cart from localStorage if it exists, otherwise an empty array
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -233,3 +211,6 @@ document.getElementById('checkout-btn').addEventListener('click', async () => {
     console.error('Error:', error);
   }
 });
+
+
+const stripe = Stripe('pk_test_51QTSb2LPa32ZluPp57bSF7ObgsE3CMMCcM1eSbcuMBDrhRuZV6uYL8EqqpLLiGwIAbEg8crJEYfXBDyBM5fZM5Q600fBMTS2Rt');
